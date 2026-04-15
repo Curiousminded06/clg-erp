@@ -9,7 +9,7 @@ const envSchema = z.object({
   MONGO_URI: z.string().min(1, 'MONGO_URI is required'),
   JWT_ACCESS_SECRET: z.string().min(32, 'JWT_ACCESS_SECRET must be at least 32 chars'),
   JWT_ACCESS_EXPIRES_IN: z.string().default('1d'),
-  CORS_ORIGIN: z.string().min(1).default('https://clg-erp-sdsf.pages.dev/')
+  CORS_ORIGIN: z.string().min(1).default('https://clg-erp-sdsf.pages.dev')
 });
 
 const parsed = envSchema.safeParse(process.env);
