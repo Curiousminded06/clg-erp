@@ -85,6 +85,25 @@ Production note:
 - The compose file uses the bundled MongoDB service by default. If you want Atlas instead, change the server container's `MONGO_URI` override in `docker-compose.yml` before deploying.
 - For a public production domain, put a reverse proxy in front of the containers and point `CORS_ORIGIN` plus `VITE_API_URL` to that domain.
 
+## Deploy Backend Separately On Render
+
+This repository includes a Render blueprint at [render.yaml](render.yaml) for the backend only.
+
+1. Create a new Render Web Service from this repository using the blueprint.
+2. Set the root directory to `apps/server` if you are creating the service manually.
+3. Use the blueprint build and start commands:
+   - Build: `npm ci`
+   - Start: `npm start`
+4. Add these environment variables in Render:
+   - `MONGO_URI` pointing to MongoDB Atlas or another external MongoDB instance
+   - `JWT_ACCESS_SECRET` with at least 32 random characters
+   - `CORS_ORIGIN` with your frontend origin, or a comma-separated list of allowed origins
+   - `JWT_ACCESS_EXPIRES_IN` if you want a token lifetime other than `1d`
+5. Leave `PORT` unset in Render. Render injects it automatically.
+6. Use `/api/health/ready` as the health check path.
+
+If you deploy the frontend somewhere else later, update `CORS_ORIGIN` to that deployed frontend URL before testing login or authenticated requests.
+
 ### Deploy Both on One VM (quick recipe)
 
 1. Install Docker and Docker Compose on the VM.

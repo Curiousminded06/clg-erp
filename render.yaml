@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: clg-erp-backend
+    runtime: node
+    rootDir: apps/server
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health/ready
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
