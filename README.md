@@ -2,6 +2,24 @@
 
 A production-minded MERN starter for a phased College ERP rollout.
 
+
+
+Checkout live at- https://clg-erp-sdsf.pages.dev/
+
+
+free credentials to use->
+## ADMIN
+admin@clg.edu
+password:Admin@12345
+
+## Faculty
+neha.gupta@clg.edu
+password:Faculty@12345
+
+#Student
+rohan.verma@clg.edu
+password:Student@12345
+
 ## Tech Stack
 
 - MongoDB
