@@ -16,7 +16,6 @@
   "type": "module",
   "dependencies": {
     "bcryptjs": "^3.0.3",
-    "clg-erp": "file:../..",
     "compression": "^1.8.1",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
