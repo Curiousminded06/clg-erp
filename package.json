@@ -1,0 +1,26 @@
+{
+  "name": "clg-erp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "College ERP built with MERN in delivery phases",
+  "scripts": {
+    "dev": "concurrently \"npm --prefix apps/server run dev\" \"npm --prefix apps/client run dev\"",
+    "dev:server": "npm --prefix apps/server run dev",
+    "dev:client": "npm --prefix apps/client run dev",
+    "build": "npm --prefix apps/server run build && npm --prefix apps/client run build",
+    "smoke": "node scripts/smoke-check.mjs",
+    "phase5:quick": "npm run build && npm run smoke",
+    "lint": "npm --prefix apps/client run lint",
+    "start": "npm --prefix apps/server run start"
+  },
+  "keywords": [
+    "mern",
+    "erp",
+    "college"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "users": [
+    {
+      "_id": "66b000000000000000000001",
+      "fullName": "Aarav Sharma",
+      "email": "admin@clg.edu",
+      "passwordHash": "$2b$12$HCkO1HZF87MbH/ivd4yDbuXwA3lLI10K.cNwhXzVO77j.CJllgake",
+      "role": "admin"
+    },
+    {
+      "_id": "66b000000000000000000002",
+      "fullName": "Dr. Neha Gupta",
+      "email": "neha.gupta@clg.edu",
+      "passwordHash": "$2b$12$fs8t0oxqVPFaWdqjE76iI.Y6NtKn1nIHMzg1i.zIH1ztRptT.W0g6",
+      "role": "faculty"
+    },
+    {
+      "_id": "66b000000000000000000003",
+      "fullName": "Rohan Verma",
+      "email": "rohan.verma@clg.edu",
+      "passwordHash": "$2b$12$ijtgf4qPPBWkS/YUXX0vTusJDHInBP4QoNEBBr1j9ejNe.savqbsa",
+      "role": "student"
+    },
+    {
+      "_id": "66b000000000000000000004",
+      "fullName": "Sara Khan",
+      "email": "sara.khan@clg.edu",
+      "passwordHash": "$2b$12$B3mV8GGAG/LubJTamJYHnec7PmYhW88xv1wlNK2f1G7siSNrn9HBu",
+      "role": "student"
+    }
+  ],
+  "departments": [
+    {
+      "_id": "66b100000000000000000001",
+      "name": "Computer Science and Engineering",
+      "code": "CSE",
+      "description": "Core software engineering and computing programs"
+    },
+    {
+      "_id": "66b100000000000000000002",
+      "name": "Business Administration",
+      "code": "MBA",
+      "description": "Management, finance, and organizational leadership"
+    }
+  ],
+  "courses": [
+    {
+      "_id": "66b200000000000000000001",
+      "title": "Data Structures",
+      "code": "CSE201",
+      "creditHours": 4,
+      "semester": 3,
+      "department": "66b100000000000000000001"
+    },
+    {
+      "_id": "66b200000000000000000002",
+      "title": "Database Systems",
+      "code": "CSE301",
+      "creditHours": 4,
+      "semester": 5,
+      "department": "66b100000000000000000001"
+    },
+    {
+      "_id": "66b200000000000000000003",
+      "title": "Principles of Management",
+      "code": "MBA101",
+      "creditHours": 3,
+      "semester": 1,
+      "department": "66b100000000000000000002"
+    }
+  ],
+  "students": [
+    {
+      "_id": "66b300000000000000000001",
+      "user": "66b000000000000000000003",
+      "enrollmentNo": "CSE24001",
+      "department": "66b100000000000000000001",
+      "semester": 5,
+      "section": "A",
+      "dob": "2004-06-15T00:00:00.000Z",
+      "phone": "9876543210",
+      "address": "12 Lake View Road, Pune",
+      "active": true
+    },
+    {
+      "_id": "66b300000000000000000002",
+      "user": "66b000000000000000000004",
+      "enrollmentNo": "CSE24002",
+      "department": "66b100000000000000000001",
+      "semester": 5,
+      "section": "A",
+      "dob": "2004-11-02T00:00:00.000Z",
+      "phone": "9123456780",
+      "address": "44 Market Street, Pune",
+      "active": true
+    }
+  ],
+  "attendance": [
+    {
+      "_id": "66b400000000000000000001",
+      "student": "66b300000000000000000001",
+      "course": "66b200000000000000000001",
+      "faculty": "66b000000000000000000002",
+      "date": "2026-04-10T00:00:00.000Z",
+      "status": "present",
+      "remarks": "On time"
+    },
+    {
+      "_id": "66b400000000000000000002",
+      "student": "66b300000000000000000002",
+      "course": "66b200000000000000000001",
+      "faculty": "66b000000000000000000002",
+      "date": "2026-04-10T00:00:00.000Z",
+      "status": "late",
+      "remarks": "Arrived after roll call"
+    },
+    {
+      "_id": "66b400000000000000000003",
+      "student": "66b300000000000000000001",
+      "course": "66b200000000000000000002",
+      "faculty": "66b000000000000000000002",
+      "date": "2026-04-11T00:00:00.000Z",
+      "status": "absent",
+      "remarks": "Medical leave not submitted"
+    }
+  ],
+  "timetables": [
+    {
+      "_id": "66b500000000000000000001",
+      "department": "66b100000000000000000001",
+      "course": "66b200000000000000000001",
+      "faculty": "66b000000000000000000002",
+      "dayOfWeek": "Monday",
+      "startTime": "09:00",
+      "endTime": "10:00",
+      "room": "CS-101"
+    },
+    {
+      "_id": "66b500000000000000000002",
+      "department": "66b100000000000000000001",
+      "course": "66b200000000000000000002",
+      "faculty": "66b000000000000000000002",
+      "dayOfWeek": "Wednesday",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "room": "CS-204"
+    }
+  ],
+  "exams": [
+    {
+      "_id": "66b600000000000000000001",
+      "department": "66b100000000000000000001",
+      "course": "66b200000000000000000001",
+      "examType": "midterm",
+      "date": "2026-04-20T00:00:00.000Z",
+      "startTime": "10:00",
+      "endTime": "11:30",
+      "maxMarks": 100
+    },
+    {
+      "_id": "66b600000000000000000002",
+      "department": "66b100000000000000000002",
+      "course": "66b200000000000000000003",
+      "examType": "quiz",
+      "date": "2026-04-22T00:00:00.000Z",
+      "startTime": "14:00",
+      "endTime": "14:30",
+      "maxMarks": 25
+    }
+  ],
+  "invoices": [
+    {
+      "_id": "66b700000000000000000001",
+      "student": "66b300000000000000000001",
+      "title": "Semester Fee - Spring 2026",
+      "amount": 45000,
+      "dueDate": "2026-04-25T00:00:00.000Z",
+      "status": "pending",
+      "paymentMethod": "none",
+      "paymentReference": ""
+    },
+    {
+      "_id": "66b700000000000000000002",
+      "student": "66b300000000000000000002",
+      "title": "Lab Fee - Spring 2026",
+      "amount": 12000,
+      "dueDate": "2026-04-05T00:00:00.000Z",
+      "status": "overdue",
+      "paymentMethod": "none",
+      "paymentReference": ""
+    }
+  ]
+}
