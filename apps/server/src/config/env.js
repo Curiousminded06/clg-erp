@@ -19,4 +19,8 @@ if (!parsed.success) {
   throw new Error(`Invalid environment variables:\n${issues.join('\n')}`);
 }
 
+if (parsed.data.NODE_ENV === 'production' && parsed.data.CORS_ORIGIN === 'http://localhost:5173') {
+  throw new Error('CORS_ORIGIN must be set explicitly in production');
+}
+
 export const env = parsed.data;

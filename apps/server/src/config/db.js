@@ -7,3 +7,10 @@ export async function connectDB() {
   await mongoose.connect(env.MONGO_URI);
   logger.info('MongoDB connected');
 }
+
+export async function disconnectDB() {
+  if (mongoose.connection.readyState !== 0) {
+    await mongoose.disconnect();
+    logger.info('MongoDB disconnected');
+  }
+}

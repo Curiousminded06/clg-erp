@@ -7,15 +7,18 @@ import {
   signAccessToken
 } from './auth.service.js';
 
+const authCookieOptions = {
+  httpOnly: true,
+  sameSite: 'lax',
+  secure: process.env.NODE_ENV === 'production',
+  path: '/',
+  maxAge: 24 * 60 * 60 * 1000
+};
+
 function sendAuthResponse(res, user) {
   const token = signAccessToken(user);
 
-  res.cookie('access_token', token, {
-    httpOnly: true,
-    sameSite: 'lax',
-    secure: process.env.NODE_ENV === 'production',
-    maxAge: 24 * 60 * 60 * 1000
-  });
+  res.cookie('access_token', token, authCookieOptions);
 
   return res.status(200).json({
     success: true,
@@ -83,6 +86,6 @@ export async function me(req, res, next) {
 }
 
 export function logout(_req, res) {
-  res.clearCookie('access_token');
+  res.clearCookie('access_token', authCookieOptions);
   return res.status(200).json({ success: true, message: 'Logged out' });
 }
